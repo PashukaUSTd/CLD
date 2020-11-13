@@ -115,11 +115,12 @@ textarea {
 }
 
 .container {
-    max-width: 1770px;
+    max-width: 1800px;
     margin: 0 auto;
 }
 
 .header-container {
+    margin: 0 15px;
     display: flex;
     align-items: center;
     background-color: var(--white);
@@ -216,6 +217,7 @@ textarea {
 
 .first-section {
     position: relative;
+    margin: 0 15px;
     margin-bottom: 100px;
     background-image: url('../img/main-back.jpg');
     background-size: cover;
@@ -229,7 +231,7 @@ textarea {
 }
 
 .first-title {
-    width: 50%;
+    width: 850px;
     margin-bottom: 24px;
     font-weight: 800;
     font-size: 70.3742px;
@@ -239,7 +241,7 @@ textarea {
 
 .first-description {
     margin-bottom: 97px;
-    width: 50%;
+    width: 850px;
     font-weight: 700;
     font-size: 23.4581px;
     line-height: 29px;
@@ -291,7 +293,7 @@ textarea {
 }
 
 .about-us {
-    margin-bottom: 44px;
+    margin: 0 15px 44px 15px;
 }
 
 .about-us-title {
@@ -318,11 +320,24 @@ textarea {
 .advantages {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 100px;
+    margin: 0 15px 100px 15px;
 }
 
 .advantages-left-section>* {
     z-index: 1;
+}
+
+.advantages-left-section {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-around;
+    padding: 444px 0 0px 0px;
+    height: 624px;
+    width: 49.5%;
+    background-image: url('../img/advantage1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .advantages-left-section::after {
@@ -336,28 +351,16 @@ textarea {
     background-color: #000000;
 }
 
-.advantages-left-section {
-    display: flex;
-    position: relative;
-    align-items: center;
-    padding: 484px 0 40px 0px;
-    width: 49.2%;
-    background-image: url('../img/advantage1.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
 .advantages-left-description {
+    margin-left: 17px;
     width: 58%;
     line-height: 33px;
-    margin-left: 55px;
     font-weight: 700;
     color: var(--white);
 }
 
 .advantages-left-link {
-    margin-top: 4px;
-    margin-left: 66px;
+    margin-right: 30px;
     padding: 17px 36px;
     font-weight: 700;
     color: var(--white);
@@ -382,7 +385,6 @@ textarea {
 .advantage-right {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
     position: relative;
     z-index: 1;
     height: 47.5%;
@@ -391,32 +393,36 @@ textarea {
     border: 1px solid var(--grey);
     width: 100%;
 }
-.advantage-right::before{
-    content:'';
+
+.advantage-right::before {
+    content: '';
     position: absolute;
     z-index: 0;
     top: 88px;
-    left: 61px;
+    /* left: 61px; */
+    left: 7.5%;
     width: 120px;
     height: 120px;
     border-radius: 60px;
     background-color: var(--cld);
 }
-.advantage-right::after{
-    content:'';
+
+.advantage-right::after {
+    content: '';
     position: absolute;
     z-index: 2;
     top: 71px;
-    left: 120px;
+    /* left: 120px; */
+    left: 14%;
     width: 119px;
     height: 132px;
     background: url('../img/package.svg') no-repeat;
     background-size: cover;
 }
-.advantage-right2{
+
+.advantage-right2 {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
     position: relative;
     z-index: 1;
     height: 47.5%;
@@ -425,23 +431,27 @@ textarea {
     border: 1px solid var(--grey);
     width: 100%;
 }
-.advantage-right2::before{
-    content:'';
+
+.advantage-right2::before {
+    content: '';
     position: absolute;
     z-index: 0;
     top: 88px;
-    left: 61px;
+    /* left: 61px; */
+    left: 7.5%;
     width: 120px;
     height: 120px;
     border-radius: 60px;
     background-color: var(--cld);
 }
-.advantage-right2::after{
-    content:'';
+
+.advantage-right2::after {
+    content: '';
     position: absolute;
     z-index: 2;
     top: 55px;
     left: 112px;
+    left: 13%;
     width: 127px;
     height: 127px;
     background: url('../img/settings.svg') no-repeat;
@@ -450,23 +460,25 @@ textarea {
 
 .first-line {
     display: block;
+    margin-bottom: 4px;
     font-weight: bold;
     font-size: 24px;
     line-height: 29px;
 }
 
 .advantage-right-description {
-    margin-right: 110px;
+    margin-left:34%;
+    margin-right:5px;
     width: 53%;
     margin-top: 4px;
     line-height: 33px;
 }
-
+.our-job-section{
+    margin: 0 15px 100px 15px;
+}
 .our-job {
     display: flex;
-    margin-bottom: 100px;
 }
-
 .our-job-left {
     width: 100%;
     padding-right: 867px;
@@ -474,11 +486,11 @@ textarea {
 }
 
 .our-job-title {
-    margin: 0 0 50px 0;
+    margin: 0 0 45px 0;
 }
 
 .our-job-menu {
-    margin-bottom: 47px;
+    margin-bottom: 45px;
     font-size: 18px;
 }
 
@@ -514,7 +526,7 @@ textarea {
     margin-left: 3px;
     width: 85%;
     margin-bottom: 62px;
-    line-height: 33px;
+    line-height: 32px;
 }
 
 .more {
@@ -546,16 +558,9 @@ textarea {
     background-color: var(--brown);
 }
 
-.our-job-right768 {
-    display: none;
-}
-
-.our-job-description768 {
-    display: none;
-}
 
 .questions {
-    margin-bottom: 100px;
+    margin: 0 15px 100px 15px;
 }
 
 .questions-title {
@@ -573,6 +578,10 @@ textarea {
 
 .questions-item:nth-child(n+2) .questions-btn {
     padding-top: 25px;
+}
+
+.questions-item:nth-child(4) .questions-text{
+    width: 90%;
 }
 
 .questions-btn {
@@ -619,11 +628,11 @@ textarea {
 .footer {
     display: flex;
     justify-content: space-between;
+    margin:0 15px;
     color: var(--white);
 }
 
 .footer-container {
-    margin-left: 2px;
     margin-top: 1px;
     width: 33%;
 }
@@ -805,7 +814,6 @@ textarea {
 }
 
 .footer-form-label {
-    margin-right: 4px;
     font-size: 16px;
     font-weight: 400;
     cursor: pointer;
@@ -816,12 +824,87 @@ textarea {
     line-height: 33px;
     color: var(--grey);
 }
+@media (max-width:1550px){
+    .footer-description{
+        padding-top: 70px;
+        padding-left:30%;
+    }
+}
+@media (max-width:1400px){
+    .logo{
+        width: 150px;
+        height: 50px;
+    }
+    .advantage-right::before{
+        width: 80px;
+        height: 80px;
+        border: 40px;
+        top: 20px;
+        left:0px
+    }
+    .advantage-right::after{
+        width: 80px;
+        height: 88px;
+        background-size: cover;
+        top: 0px;
+        left:30px
+    }
+    .advantage-right2::before{
+        width: 80px;
+        height: 80px;
+        border: 40px;
+        top: 20px;
+        left:0px
+    }
+    .advantage-right2::after{
+        width: 80px;
+        height: 80px;
+        top: 0px;
+        left:30px
+    }
+    .advantage-right-description{
+        margin-left: 10px;
+        margin-top: 100px;
+        width: 100%;
+    }
+    .our-job-left {
+        width: 100%;
+        padding-right: 600px;
+        background: url('../img/wework.jpg') 100% 100% no-repeat;
+        background-size: 47.2% 79%;
+    }
+    .our-job-list {
+        width: 100%;
+    }
+    .our-job-item:last-child{
+        margin-right: 100px;
+    }
+    .our-job-left-description {
+        margin-right: 0;
+        margin-bottom: 28px;
+        width: 89.2%;
+    }
+    .footer-container:nth-child(1){
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .btn-container{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .footer-form-btn{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
 
 @media (max-width:1024px) {
     .container {
-        max-width: 924px;
+        max-width: 954px;
     }
     .header-container {
+        justify-content: space-between;
         height: 100px;
     }
     .burger {
@@ -829,8 +912,8 @@ textarea {
         cursor: pointer;
     }
     .logo {
+        margin-right: 0;
         margin-bottom: 20px;
-        margin-left: 357px;
         width: 150px;
         height: 45px;
         background-image: url('../img/logo1.png');
@@ -845,7 +928,7 @@ textarea {
         display: none;
     }
     .first-section {
-        margin-bottom: 60px;
+        margin-bottom: 57px;
         background-image: url('../img/main-back1024.jpg');
         background-size: 100%;
         background-position: 0 70%;
@@ -875,7 +958,7 @@ textarea {
         margin-bottom: 3px;
     }
     .about-us {
-        margin-bottom: 60px;
+        margin-bottom: 58px;
     }
     .about-us-title {
         margin-bottom: 27px;
@@ -884,17 +967,21 @@ textarea {
         width: 100%;
         font-size: 16px;
     }
+    .i{
+        margin-left: 0;
+        margin-right: 5px;
+    }
     .advantages {
         margin-bottom: 57px;
         flex-direction: column;
     }
     .advantages-left-section {
         margin-bottom: 45px;
-        padding: 502px 0 40px 45px;
+        padding: 506px 0 40px 30px;
+        height: 638px;
         width: 100%;
         background-image: url('../img/advantage1.jpg');
         background-size: cover;
-        background-position: 100% 0;
         background-repeat: no-repeat;
     }
     .advantages-left-section::after {
@@ -902,51 +989,63 @@ textarea {
     }
     .advantages-left-description {
         margin-left: 0;
-        width: 57.5%;
+        width: 56%;
     }
     .advantages-left-link {
-        margin-left: 147px;
+        margin-left: 115px;
     }
     .advantages-right-section {
         height: auto;
         width: 100%;
     }
     .advantage-right {
-        padding:63px 0 67px 0;
+        padding: 63px 0 67px 0;
     }
-    .advantage-right::before{
+    .advantage-right::before {
+        width: 120px;
+        height: 120px;
+        border: 60px;
         top: 93px;
-        left:112px;
+        left: 112px;
     }
-    .advantage-right::after{
+    .advantage-right::after {
+        width: 119px;
+        height: 132px;
         top: 76px;
         left: 171px;
     }
     .advantage-right2 {
         margin-top: 40px;
-        padding:65px 0 67px 0;
+        padding: 60px 0 65px 0;
         height: 45%;
     }
-    .advantage-right2::before{
+    .advantage-right2::before {
+        width: 120px;
+        height: 120px;
+        border: 60px;
         top: 93px;
-        left:112px;
+        left: 112px;
     }
-    .advantage-right2::after{
+    .advantage-right2::after {
+        width: 127px;
+        height: 127px;
         top: 63px;
         left: 163px;
     }
-    .first-line{
+    .first-line {
         margin-bottom: 2px;
     }
     .advantage-right-description {
-        width:50%;
-        margin-right: 112px;
+        width: 50%;
+        margin-top: 5px;
+        margin-left: 350px;
     }
-
+    .our-job-section{
+        margin-bottom: 57px;
+    }
     .our-job {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 60px;
     }
     .our-job-title {
         margin-left: 0;
@@ -956,24 +1055,29 @@ textarea {
         width: 100%;
         padding-right: 434px;
         background: url('../img/wework1024.png') 100% 100% no-repeat;
-        background-size: 47.2% 79%;
+        background-size: 47.2% 90%;
     }
     .our-job-menu {
-        margin-bottom: 49px;
+        margin-bottom: 47px;
     }
     .our-job-list {
+        margin-right: 0;
         width: 100%;
     }
-    .our-job-link:not(:last-child) {
-        margin-right: 100px;
+    .our-job-item:last-child {
+        margin-right:0;
+    }
+    .our-job-left{
+        margin-bottom: 0;
     }
     .our-job-left-description {
         margin-right: 0;
         margin-bottom: 28px;
         width: 89.2%;
+        line-height: 32px;
     }
-    .our-job-right {
-        display: none;
+    .more{
+        margin-bottom: 5px;
     }
     .questions {
         margin-bottom: 60px;
@@ -987,8 +1091,8 @@ textarea {
     .questions-item:nth-child(n+3) .questions-btn {
         padding: 24px 0 28px 0;
     }
-    .questions-item:nth-child(4) .questions-text{
-        width:82%;
+    .questions-item:nth-child(4) .questions-text {
+        width: 82%;
     }
     .questions-item:nth-child(2n) .questions-btn {
         padding: 19px 0 25px 0;
@@ -1024,33 +1128,37 @@ textarea {
         width: 45%;
     }
     .footer-checkbox {
-        margin-right: 0;
+        margin-right: 5px;
         margin-left: 10px;
     }
     .footer-form-label {
         margin-right: 0;
     }
 }
+@media (max-width:933px){
+    .footer-form-btn{
+        width: 100%;
+    }
+}
 
-@media (max-width:768px){
+@media (max-width:768px) {
     .container {
         max-width: 768px;
     }
     .container768 {
-        max-width: 668px;
+        max-width: 700px;
         margin: 0 auto;
     }
     .header-container {
+        margin: 0 15px;
         height: 85px;
         padding-top: 15px;
     }
     .burger {
-        margin-bottom: 10px;
+        margin-left: 0;
         display: inline-block;
     }
     .logo {
-        margin-bottom: 20px;
-        margin-left: auto;
         width: 150px;
         height: 45px;
         background-image: url('../img/logo1.png');
@@ -1067,6 +1175,7 @@ textarea {
         display: none;
     }
     .first-section {
+        margin: 0 0;
         margin-bottom: 60px;
         padding-bottom: 0px;
         background: url('../img/main-back1024.jpg') 100% 100% no-repeat;
@@ -1100,6 +1209,7 @@ textarea {
         left: 45%;
     }
     .about-us {
+        padding: 0 15px;
         margin-bottom: 59px;
     }
     .about-us-title {
@@ -1111,13 +1221,15 @@ textarea {
         line-height: 32.5px;
     }
     .advantages {
-        margin-bottom: 60px;
+        padding: 0 15px;
+        margin-bottom: 55px;
         flex-direction: column;
     }
     .advantages-left-section {
         margin-left: 3px;
         margin-bottom: 38px;
-        padding: 500px 0 20px 0px;
+        padding: 500px 0 27px 0px;
+        height: auto;
         width: 100%;
         background-image: url('../img/advantage1.jpg');
         background-size: cover;
@@ -1128,57 +1240,61 @@ textarea {
         height: 170px;
     }
     .advantages-left-description {
-        margin-left: 30px;
+        margin-left:15px;
+        line-height: 30px;
         width: 60%;
     }
     .advantages-left-link {
-        margin-right: 0px;
-        margin-left: 33px;
+        margin-right: 20px;
+        margin-left: 0;
     }
     .advantages-right-section {
         height: auto;
         width: 100%;
     }
     .advantage-right {
-        padding: 0 0 0 0;
+        margin-top: 0;
+        padding:38px 20px 35px 178px;
         height: auto;
     }
-    .advantage-right::before{
-        width:80px;
-        height:80px;
-        top:82px;
-        left:35px;
+    .advantage-right::before {
+        width: 80px;
+        height: 80px;
+        top: 85px;
+        left: 33px;
         border: 40px;
     }
-    .advantage-right::after{
-        width:80px;
-        height:88px;
-        top:70px;
-        left:70px;
+    .advantage-right::after {
+        width: 80px;
+        height: 88px;
+        top: 74px;
+        left: 72px;
     }
     .advantage-right2 {
-        padding: 0 0 0 0;
+        padding:30px 20px 35px 176px;
         margin-top: 40px;
         height: auto;
     }
-    .advantage-right2::before{
-        width:76px;
-        height:76px;
-        top:88px;
-        left:33px;
+    .advantage-right2::before {
+        width: 76px;
+        height: 76px;
+        top: 85px;
+        left: 33px;
         border: 38px;
     }
-    .advantage-right2::after{
-        width:80px;
-        height:80px;
-        top:70px;
-        left:70px;
+    .advantage-right2::after {
+        width: 80px;
+        height: 80px;
+        top: 68px;
+        left: 68px;
     }
     .advantage-right-description {
-        margin-top: 38px;
-        margin-right: 20px;
-        margin-bottom: 35px;
-        width: 70%;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .our-job-section{
+        padding: 0 15px;
     }
     .our-job {
         flex-direction: column;
@@ -1194,10 +1310,9 @@ textarea {
     }
     .our-job-menu {
         margin-bottom: 40px;
-        padding-bottom: 331px;
-        height: 461px;
+        padding-bottom: 328px;
         background: url('../img/wework768.jpg') 0 100% no-repeat;
-        background-size: 100% 62%;
+        background-size: 100% 80%;
     }
     .our-job-list {
         width: 100%;
@@ -1230,19 +1345,21 @@ textarea {
         display: none;
     }
     .questions {
+        padding: 0 15px;
         margin-bottom: 56px;
     }
     .questions-title {
-        font-size: 46px;
+        margin-bottom: 36px;
         margin-left: 3px;
+        font-size: 46px;
     }
     .questions-btn {
         font-size: 20px;
         line-height: 33px;
     }
-    .questions-item:first-child .questions-btn{
+    .questions-item:first-child .questions-btn {
         padding-top: 27px;
-        padding-bottom: 25px;
+        padding-bottom: 23px;
     }
     .questions-item:not(:first-child) .questions-btn {
         padding-top: 19px;
@@ -1257,6 +1374,7 @@ textarea {
     .footer {
         display: block;
         position: relative;
+        margin: 0 15px;
         height: 775px;
     }
     .footer-list {
@@ -1276,7 +1394,7 @@ textarea {
     .footer-container:nth-child(3) {
         display: none;
     }
-    .footer-title{
+    .footer-title {
         margin-left: 0;
     }
     .footer-form {
@@ -1299,6 +1417,80 @@ textarea {
     }
     .footer-logo {
         margin-top: 55px;
+    }
+}
+
+@media (max-width:691px){
+    .footer-container{
+        width: 50%;
+    }
+    .footer-form-btn{
+        width: 100%;
+    }
+}
+
+@media (max-width:513px){
+    h2{
+        font-size: 35px;
+        line-height:40px;
+    }
+    .first-container{
+        padding: 50px 5px;
+    }
+    .first-title{
+        text-align: center;
+        font-size: 33px;
+        line-height: 50px;
+    }
+    .first-description{
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .first-btn{
+        margin-left: 25%;
+        padding: 20px 20px;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .first-radio{
+        left: 40%;
+    }
+    .advantages-left-section::after{
+        height: 320px;
+    }
+    .questions-title{
+        font-size: 35px;
+        line-height: 40px;
+    }
+
+    .footer-container{
+        width: 100%;
+    }
+    .footer-container:nth-child(1){
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        bottom: 10px;
+    }
+    .footer-logo{
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    .footer-social-container{
+        display: flex;
+        justify-content: space-around;
+    }
+    .footer-container:nth-child(2){
+        margin-right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-title{
+        font-size: 35px;
     }
 }
 
@@ -1430,37 +1622,40 @@ textarea {
     .advantage-right {
         margin-top: 0;
         margin-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
         align-items: flex-start;
         border: none;
     }
-    .advantage-right::before{
+    .advantage-right::before {
         width: 44px;
         height: 44px;
         top: 6px;
         left: 0;
         border: 22px;
     }
-    .advantage-right::after{
+    .advantage-right::after {
         width: 44px;
         height: 48px;
         top: 0;
         left: 21px;
     }
     .advantage-right2 {
-        margin-top:20px;
+        margin-top: 20px;
         margin-bottom: 0;
-        padding-top: 7px;
+        padding-left: 0;
+        padding-right: 0;
         align-items: flex-start;
         border: none;
     }
-    .advantage-right2::before{
+    .advantage-right2::before {
         width: 44px;
         height: 44px;
         top: 12px;
         left: 0;
         border: 22px;
     }
-    .advantage-right2::after{
+    .advantage-right2::after {
         width: 45px;
         height: 45px;
         top: 0;
@@ -1568,14 +1763,14 @@ textarea {
         padding-left: 20px;
         margin-bottom: 25px;
     }
-    .footer-form-input::placeholder{
+    .footer-form-input::placeholder {
         font-size: 14px;
     }
     .footer-form-textarea {
         padding-left: 20px;
         margin-bottom: 25px;
     }
-    .footer-form-textarea::placeholder{
+    .footer-form-textarea::placeholder {
         font-size: 14px;
     }
     .btn-container {
@@ -1631,6 +1826,7 @@ textarea {
     }
     .header-container {
         position: relative;
+        margin: 0 0;
         padding-top: 10px;
         height: 45px;
     }
@@ -1652,6 +1848,7 @@ textarea {
         background-size: 25px 19px;
     }
     .first-section {
+        padding: 0 0;
         background: url('../img-mobile/main-back-320.jpg') 100% 100% no-repeat;
         background-size: cover;
         margin-bottom: 38px;
@@ -1692,8 +1889,10 @@ textarea {
     .first-radio {
         display: none;
     }
+
     .about-us {
         margin-bottom: 10px;
+        padding: 0 0;
     }
     .about-us-title {
         margin-bottom: 0;
@@ -1711,7 +1910,8 @@ textarea {
         margin-left: 0;
     }
     .advantages {
-        margin-bottom: 33px;
+        padding: 0;
+        margin-bottom: 40px;
     }
     .advantages-left-section {
         display: flex;
@@ -1744,6 +1944,14 @@ textarea {
     .advantages-right-section {
         height: auto;
     }
+    .advantage-right{
+        padding: 0;
+    }
+    .advantage-right2{
+        padding: 0;
+        padding-top: 5px;
+        margin-top: 20px;
+    }
     .first-line {
         margin-bottom: 0;
         font-size: 18px;
@@ -1751,13 +1959,18 @@ textarea {
         line-height: 24px;
     }
     .advantage-right-description {
+        padding: 0;
         margin-bottom: 0;
         margin-right: 0;
         width: 100%;
         line-height: 28px;
     }
+
+    .our-job-section{
+        padding: 0;
+    }
     .our-job {
-        margin-bottom: 43px;
+        margin-bottom: 38px;
     }
     .our-job-menu {
         margin-bottom: 10px;
@@ -1766,7 +1979,7 @@ textarea {
         background: url('../img-mobile/wework.png') 0 100% no-repeat;
     }
     .our-job-title {
-        margin-bottom: 16px;
+        margin-bottom: 29px;
     }
     .our-job-btn {
         font-size: 14px;
@@ -1793,6 +2006,7 @@ textarea {
         font-size: 12px;
     }
     .questions {
+        padding: 0;
         margin-bottom: 38px;
     }
     .questions-title {
@@ -1828,13 +2042,19 @@ textarea {
         height: 33px;
     }
     .footer {
+        margin: 0;
         height: 678px;
+    }
+    .footer-container:nth-child(2) {
+        align-items:flex-start;
     }
     .footer-title {
         margin-left: 0;
-        margin-top: 20px;
-        margin-bottom: 5px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        font-size: 24px;
     }
+
     .footer-form {
         height: auto;
         margin-left: 0;
@@ -1844,14 +2064,14 @@ textarea {
         padding-left: 20px;
         margin-bottom: 25px;
     }
-    .footer-form-input::placeholder{
+    .footer-form-input::placeholder {
         font-size: 14px;
     }
     .footer-form-textarea {
         padding-left: 20px;
         margin-bottom: 25px;
     }
-    .footer-form-textarea::placeholder{
+    .footer-form-textarea::placeholder {
         font-size: 14px;
     }
     .btn-container {
@@ -1874,6 +2094,7 @@ textarea {
     .footer-container:nth-child(1) {
         left: 25%;
         width: 141px;
+        bottom: 15px;
     }
     .footer-logo {
         width: 131px;
