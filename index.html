@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="preload" href="fonts/Montserrat/Montserrat-Regular.woff2" as="font">
+    <link rel="preload" href="fonts/Montserrat/Montserrat-Medium.woff2" as="font">
+    <link rel="preload" href="fonts/Montserrat/Montserrat-Bold.woff2" as="font">
+    <link rel="preload" href="fonts/Montserrat/Montserrat-Extrabold.woff2" as="font">
     <link rel="stylesheet" href="css/style.css">
     <title>Евклид</title>
 </head>
@@ -12,15 +16,15 @@
     <header>
         <div class="container container768">
             <div class="header-container ">
-                <button class="burger"></button>
-                <a href="#" class="logo" aria-label="Добро пожаловать на сайт Евклид"></a>
-                <nav class="header-menu" aria-label="Навигация по сайту">
+                <button type="menu" class="burger" aria-label="открыть меню"></button>
+                <img class="logo" src="img/logo1.png" alt="Логотип" aria-label="Добро пожаловать на сайт Евклид">
+                <nav class="header-menu">
                     <ul class="header-list">
                         <li class="header-list-item">
                             <a href="#" class="header-list-link">О нас</a>
                         </li>
                         <li class="header-list-item">
-                            <a href="#" class="header-list-link">Проекты </a>
+                            <a href="#" class="header-list-link">Проекты</a>
                         </li>
                         <li class="header-list-item">
                             <a href="#" class="header-list-link">Этапы</a>
@@ -35,7 +39,7 @@
 
                     </ul>
                 </nav>
-                <button class="header-search" aria-label="Поиск"></button>
+                <button type="submit" class="header-search" aria-label="Поиск"></button>
             </div>
         </div>
     </header>
@@ -45,16 +49,16 @@
                 <div class="first-container">
                     <h1 class="first-title">Проектные решения любой сложности</h1>
                     <p class="first-description">Есть над чем задуматься: базовые сценарии поведения пользователей и
-                        посей день
+                        по сей день
                         остаются уделом проектантов
                     </p>
-                    <button class="first-btn" aria-label="Наши услуги">
+                    <button type="button" class="first-btn">
                         Заказать расчёт
                     </button>
                     <div class="first-switch">
-                        <button class="first-switch-btn"></button>
-                        <button class="first-switch-btn"></button>
-                        <button class="first-switch-btn"></button>
+                        <button type="button" class="first-switch-btn" aria-label="Кнопка переключения 1"></button>
+                        <button type="button" class="first-switch-btn" aria-label="Кнопка переключения 2"></button>
+                        <button type="button" class="first-switch-btn" aria-label="Кнопка переключения 3"></button>
                     </div>
                 </div>
             </section>
@@ -76,7 +80,7 @@
                     способствует повышению качества экспериментов.
                 </p>
             </section>
-            <section class="advantages container768">
+            <div class="advantages container768">
                 <div class="advantages-left-section">
                     <p class="advantages-left-description">
                         Принимая во внимание показатели успешности, перспективное планирование способствует подготовке и
@@ -102,7 +106,7 @@
                         </li>
                     </ul>
                 </div>
-            </section>
+            </div>
             <section class="our-job-section container768">
                 <h2 class="our-job-title">
                     Как мы работаем
@@ -110,24 +114,24 @@
                 <div class="our-job">
                     <div class="our-job-left">
                         <div class="our-job-menu">
-                            <ul class="our-job-list" aria-label="Что мы делаем">
+                            <ul class="our-job-list">
                                 <li class="our-job-item">
-                                    <button class="our-job-btn" aria-label="внедрение и модернизация">
+                                    <button type="button" class="our-job-btn">
                                         1 шаг
                                     </button>
                                 </li>
                                 <li class="our-job-item">
-                                    <button class="our-job-btn" aria-label="реплицируем зарубежные источники">
+                                    <button type="button" class="our-job-btn">
                                         2 шаг
                                     </button>
                                 </li>
                                 <li class="our-job-item">
-                                    <button class="our-job-btn" aria-label="вытесняем традиционное производство">
+                                    <button type="button" class="our-job-btn">
                                         3 шаг
                                     </button>
                                 </li>
                                 <li class="our-job-item">
-                                    <button class="our-job-btn" aria-label="внедряем нано-технологии">
+                                    <button type="button" class="our-job-btn">
                                         4 шаг
                                     </button>
                                 </li>
@@ -165,52 +169,37 @@
                 </h2>
                 <ul class="questions-list">
                     <li class="questions-item">
-                        <button class="questions-btn" aria-label="Часто задаваемые вопросы">
+                        <button type="button" class="questions-btn">
                             <span class="questions-text">
                                 Из чего формируется конечная стоимость проекта?
                             </span>
-                            <span class="questions-x">
-
-                            </span>
                         </button>
                     </li>
                     <li class="questions-item">
-                        <button class="questions-btn">
+                        <button type="button" class="questions-btn">
                             <span class="questions-text">
                                 У меня есть свой проект. Сможем ли мы его доработать / реализовать?
                             </span>
-                            <span class="questions-x">
-
-                            </span>
                         </button>
                     </li>
                     <li class="questions-item">
-                        <button class="questions-btn">
+                        <button type="button" class="questions-btn">
                             <span class="questions-text">
                                 Я выбираю между разными компаниями. В чём ваше отличие?
                             </span>
-                            <span class="questions-x">
-
-                            </span>
                         </button>
                     </li>
                     <li class="questions-item">
-                        <button class="questions-btn">
+                        <button type="button" class="questions-btn">
                             <span class="questions-text">
                                 Могу ли я делегировать вам работу / согласование с подрядчиком / организацией?
                             </span>
-                            <span class="questions-x">
-
-                            </span>
                         </button>
                     </li>
                     <li class="questions-item">
-                        <button class="questions-btn">
+                        <button type="button" class="questions-btn">
                             <span class="questions-text">
                                 Могу ли я вернуть деньги на каком-либо из этапов работ?
-                            </span>
-                            <span class="questions-x">
-
                             </span>
                         </button>
                     </li>
@@ -222,9 +211,7 @@
         <div class="container container768">
             <div class="footer">
                 <div class="footer-container">
-                    <a href="#" class="footer-logo" aria-label="Это наш логотип">
-
-                    </a>
+                    <img class="footer-logo" src="img/logo2.png" alt="Логотип">
                     <ul class="footer-list">
                         <li class="footer-item">
                             <a href="#" class="footer-item-link">
@@ -263,21 +250,23 @@
                         </li>
                     </ul>
                     <div class="footer-social-container">
-                        <a href="#" class="footer-social-facebook"></a>
-                        <a href="#" class="footer-social-vk"></a>
-                        <a href="#" class="footer-social-inst"></a>
+                        <a href="#" class="footer-social-facebook" aria-label="мы в facebook"></a>
+                        <a href="#" class="footer-social-vk" aria-label="мы в контакте"></a>
+                        <a href="#" class="footer-social-inst" aria-label="мы в инстаграм"></a>
                     </div>
                 </div>
                 <div class="footer-container correct">
-                    <h2 class="footer-title" aria-label="Оставить заявку">
+                    <h2 class="footer-title">
                         Оставить заявку
                     </h2>
                     <form action="https://my-json-server.typicode.com/typicode/demo/posts" autocomplete="on"
                         method="post" class="footer-form">
                         <input name="name" type="text" placeholder="Фамилия, имя и отчество*" class="footer-form-input"
-                            required>
-                        <input name="mail" type="email" placeholder="E-mail*" class="footer-form-input" required>
-                        <textarea name="comment" placeholder="Сообщение" class="footer-form-textarea"></textarea>
+                            required aria-label="Ввидите Вашу фамилию, имя и отчество, обязательное поле">
+                        <input name="mail" type="email" placeholder="E-mail*" class="footer-form-input" required
+                            aria-label="Введите Вашу почту, обязательное поле">
+                        <textarea name="comment" placeholder="Сообщение" class="footer-form-textarea"
+                            aria-label="Введите Ваш комментарий, необязательное поле"></textarea>
                         <div class="btn-container">
                             <button type="submit" class="footer-form-btn">
                                 Отправить данные

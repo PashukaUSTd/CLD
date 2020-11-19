@@ -4,43 +4,35 @@
 }
 
 @font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/Montserrat/Montserrat-Light.woff') format("woff"), url('../fonts/Montserrat/Montserrat-Light.woff2') format("woff2");
-    font-weight: 300;
-    font-display: swap;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/Montserrat/Montserrat-Regular.woff') format("woff"), url('../fonts/Montserrat/Montserrat-Regular.woff2') format("woff2");
     font-weight: 400;
-    font-display: swap;
     font-style: normal;
+    font-family: 'Montserrat';
+    font-display: swap;
+    src: url('../fonts/Montserrat/Montserrat-Regular.woff') format("woff"), url('../fonts/Montserrat/Montserrat-Regular.woff2') format("woff2");
 }
 
 @font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/Montserrat/Montserrat-Medium.woff') format("woff"), url('../fonts/Montserrat/Montserrat-Medium.woff2') format("woff2");
     font-weight: 500;
-    font-display: swap;
     font-style: normal;
+    font-family: 'Montserrat';
+    font-display: swap;
+    src: url('../fonts/Montserrat/Montserrat-Medium.woff') format("woff"), url('../fonts/Montserrat/Montserrat-Medium.woff2') format("woff2");
 }
 
 @font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/Montserrat/Montserrat-Bold.woff') format("woff"), url('../fonts/Montserrat/Montserrat-Bold.woff2') format("woff2");
     font-weight: 700;
-    font-display: swap;
     font-style: normal;
+    font-family: 'Montserrat';
+    font-display: swap;
+    src: url('../fonts/Montserrat/Montserrat-Bold.woff') format("woff"), url('../fonts/Montserrat/Montserrat-Bold.woff2') format("woff2");
 }
 
 @font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/Montserrat/Montserrat-ExtraBold.woff') format("woff"), url('../fonts/Montserrat/Montserrat-Extrabold.woff2') format("woff2");
     font-weight: 800;
-    font-display: swap;
     font-style: normal;
+    font-family: 'Montserrat';
+    font-display: swap;
+    src: url('../fonts/Montserrat/Montserrat-ExtraBold.woff') format("woff"), url('../fonts/Montserrat/Montserrat-Extrabold.woff2') format("woff2");
 }
 
 :root {
@@ -118,7 +110,6 @@ textarea {
     max-width: 1800px;
     margin: 0 auto;
 }
-
 .header-container {
     margin: 0 15px;
     display: flex;
@@ -144,12 +135,9 @@ textarea {
 }
 
 .logo {
-    margin: 14px auto 14px 0;
+    margin:14px auto 14px 0;
     width: 224px;
     height: 72px;
-    background-image: url('../img/logo1.png');
-    background-size: 100%;
-    background-repeat: no-repeat;
     transition: 0.5s transform ease-in-out;
 }
 
@@ -474,9 +462,18 @@ textarea {
     display: flex;
 }
 .our-job-left {
+    position: relative;
     width: 100%;
-    padding-right: 867px;
-    background: url('../img/wework.jpg') 100% 100% no-repeat;
+}
+.our-job-left::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 85.5%;
+    width: 49%;
+    background: url('../img/wework.jpg') no-repeat;
+    background-size: cover;
 }
 
 .our-job-title {
@@ -484,7 +481,7 @@ textarea {
 }
 
 .our-job-menu {
-    margin-bottom: 45px;
+    margin-bottom: 47px;
     font-size: 18px;
 }
 
@@ -504,7 +501,7 @@ textarea {
 .our-job-list {
     display: flex;
     justify-content: space-between;
-    width: 55%;
+    width: 28%;
 }
 
 .our-job-list {
@@ -518,9 +515,9 @@ textarea {
 
 .our-job-left-description {
     margin-left: 3px;
-    width: 85%;
+    width: 43.5%;
     margin-bottom: 62px;
-    line-height: 32px;
+    line-height: 33px;
 }
 
 .more {
@@ -570,10 +567,6 @@ textarea {
     border-top: 1px solid var(--grey);
 }
 
-.questions-item:nth-child(n+2) .questions-btn {
-    padding-top: 25px;
-}
-
 .questions-item:nth-child(4) .questions-text{
     width: 90%;
 }
@@ -581,10 +574,11 @@ textarea {
 .questions-btn {
     display: flex;
     align-items: center;
+    position: relative;
     text-align: left;
     margin-left: 4px;
     margin-top: 4px;
-    padding: 29px 0 30px 0;
+    padding: 35px 0 42px 0;
     width: 100%;
     font-size: 24px;
     font-weight: 700;
@@ -593,18 +587,11 @@ textarea {
     background-color: var(--white);
 }
 
-.questions-btn:hover .questions-text {
-    color: var(--cld);
-}
-
-.questions-btn:hover .questions-x {
-    background: url('../img/+х-hover.png') no-repeat;
-    background-size: cover;
-}
-
-.questions-x {
-    display: inline-block;
-    margin-left: auto;
+.questions-btn::after{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    right: 5px;
     width: 50px;
     height: 50px;
     background-color: var(--white);
@@ -615,8 +602,13 @@ textarea {
     cursor: pointer;
 }
 
-.questions-x:hover {
+.questions-btn:hover .questions-text {
+    color: var(--cld);
+}
+
+.questions-btn:hover::after{
     background: url('../img/+х-hover.png') no-repeat;
+    background-size: cover;
 }
 
 .footer {
@@ -637,9 +629,6 @@ textarea {
     margin-bottom: 13px;
     width: 225px;
     height: 70px;
-    background-image: url('../img/logo2.png');
-    background-size: cover;
-    background-repeat: no-repeat;
     transition: 0.5s transform ease-in-out;
 }
 
@@ -861,24 +850,12 @@ textarea {
         margin-top: 100px;
         width: 100%;
     }
-    .our-job-left {
-        width: 100%;
-        padding-right: 600px;
-        background: url('../img/wework.jpg') 100% 100% no-repeat;
-        background-size: 47.2% 79%;
-    }
+    
     .our-job-list {
-        width: 100%;
+        width: 40%;
     }
-    .our-job-item:last-child{
-        margin-right: 100px;
-    }
-    .our-job-left-description {
-        margin-right: 0;
-        margin-bottom: 28px;
-        width: 89.2%;
-    }
-    .footer-container:nth-child(1){
+
+    .footer-container:nth-child(1) {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -890,6 +867,12 @@ textarea {
     .footer-form-btn{
         width: 100%;
         margin-bottom: 10px;
+    }
+}
+
+@media (max-width:1030px){
+    .advantages-left-link{
+        margin-right: 10px;
     }
 }
 
@@ -910,9 +893,6 @@ textarea {
         margin-bottom: 20px;
         width: 150px;
         height: 45px;
-        background-image: url('../img/logo1.png');
-        background-size: cover;
-        background-repeat: no-repeat;
     }
     .header-search {
         margin-right: 0;
@@ -974,6 +954,7 @@ textarea {
         flex-direction: column;
     }
     .advantages-left-section {
+        justify-content: space-between;
         margin-bottom: 45px;
         padding: 506px 0 40px 30px;
         height: 638px;
@@ -986,11 +967,11 @@ textarea {
         height: 175px;
     }
     .advantages-left-description {
-        margin-left: 0;
+        margin-left: 15px;
         width: 56%;
     }
     .advantages-left-link {
-        margin-left: 115px;
+        margin-right: 48px;
     }
     .advantages-right-section {
         height: auto;
@@ -1049,29 +1030,29 @@ textarea {
         margin-left: 0;
         margin-bottom: 46px;
     }
-    .our-job-left {
-        width: 100%;
-        padding-right: 434px;
-        background: url('../img/wework1024.png') 100% 100% no-repeat;
-        background-size: 47.2% 90%;
+    .our-job-left{
+        margin-bottom: 0;
+    }
+
+    .our-job-left::after{
+        width: 47.8%;
+        height: 89.5%;
+        background-image: url('../img/wework1024.png');
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     .our-job-menu {
         margin-bottom: 47px;
     }
-    .our-job-list {
-        margin-right: 0;
-        width: 100%;
+    .our-job-list{
+        width: 53%;
     }
     .our-job-item:last-child {
         margin-right:0;
     }
-    .our-job-left{
-        margin-bottom: 0;
-    }
     .our-job-left-description {
-        margin-right: 0;
+        width: 47.3%;
         margin-bottom: 28px;
-        width: 89.2%;
         line-height: 32px;
     }
     .more{
@@ -1081,24 +1062,22 @@ textarea {
         margin-bottom: 60px;
     }
     .questions-title {
-        margin-bottom: 38px;
+        margin-bottom: 36px;
     }
-    .questions-item:first-child .questions-btn {
-        padding: 36px 0 31px 0;
+    .questions-item:nth-child(2n+2) .questions-btn{
+        padding: 20px 0 21px;
     }
-    .questions-item:nth-child(n+3) .questions-btn {
-        padding: 24px 0 28px 0;
-    }
-    .questions-item:nth-child(4) .questions-text {
-        width: 82%;
-    }
-    .questions-item:nth-child(2n) .questions-btn {
-        padding: 19px 0 25px 0;
+    .questions-item:nth-child(2n+3) .questions-btn{
+        padding: 36px 0 38px 0;
     }
     .questions-btn {
         margin-left: 0;
+        padding: 41px 0 42px 0;
         font-size: 20px;
         line-height: 33px;
+    }
+    .questions-btn::after{
+        right: 0;
     }
     .questions-text {
         width: 80%;
@@ -1159,9 +1138,6 @@ textarea {
     .logo {
         width: 150px;
         height: 45px;
-        background-image: url('../img/logo1.png');
-        background-size: cover;
-        background-repeat: no-repeat;
     }
     .header-search {
         width: 26px;
@@ -1236,12 +1212,12 @@ textarea {
         height: 170px;
     }
     .advantages-left-description {
-        margin-left:15px;
+        margin-left:25px;
         line-height: 30px;
         width: 60%;
     }
     .advantages-left-link {
-        margin-right: 20px;
+        margin-right: 30px;
         margin-left: 0;
     }
     .advantages-right-section {
@@ -1300,6 +1276,9 @@ textarea {
         width: 100%;
         padding-right: 0;
         background: none;
+    }
+    .our-job-left::after{
+        display: none;
     }
     .our-job-title {
         margin-bottom: 48px;
@@ -1366,6 +1345,9 @@ textarea {
     }
     .questions-item:nth-child(3) .questions-text {
         width: 70%;
+    }
+    .questions-item:nth-child(4) .questions-text {
+        width: 80%;
     }
     .footer {
         display: block;
@@ -1530,7 +1512,7 @@ textarea {
     }
 }
 
-@media (max-width:412px) {
+@media (max-width:414px) {
     .container {
         max-width: 382px;
     }
@@ -1550,7 +1532,9 @@ textarea {
     .logo {
         position: absolute;
         margin: 0;
-        top: 5px;
+        width: 97px;
+        height: 31px;
+        top: 30%;
         left: 0;
         background-size: 115px 50px;
     }
@@ -1855,6 +1839,7 @@ textarea {
     }
     .first-section {
         padding: 0 0;
+        margin-bottom: 38px;
     }
     .first-title {
         line-height: 25px;
@@ -1938,6 +1923,13 @@ textarea {
     .questions-title {
         margin-left: 0;
         margin-bottom: 16px;
+    }
+    .questions-item:nth-child(3) .questions-text{
+        width: 80%;
+    }
+    .questions-btn::after{
+        width: 30px;
+        height: 30px;
     }
     .footer {
         margin: 0;
