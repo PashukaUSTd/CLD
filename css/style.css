@@ -5,17 +5,25 @@
 
 @font-face {
     font-weight: 400;
+    /*Насыщенность*/
     font-style: normal;
+    /*Начертание шрифта: normal - обычное; italic - курсивное; oblique - наклонное начертание
+    разница между italic и oblique в том, что первое начертание это имитация рукописного шрифта, а второе наклон символов вправо*/
     font-family: 'Montserrat';
-    font-display: swap;
+    /*Название шрифта*/
+    font-display: block;
+    /*Значение block дает понять браузеру, что нужно сперва подгрузить кастомный шрифт а после 
+    отобразить его - такое явление называется FOIT, значение swap говорит браузеру заменить кастомный на резервный шрифт,
+    пока тот подгружается - это явление называется FOUT*/
     src: url('../fonts/Montserrat/Montserrat-Regular.woff') format("woff"), url('../fonts/Montserrat/Montserrat-Regular.woff2') format("woff2");
+    /*дирректория шрифта*/
 }
 
 @font-face {
     font-weight: 500;
     font-style: normal;
     font-family: 'Montserrat';
-    font-display: swap;
+    font-display: block;
     src: url('../fonts/Montserrat/Montserrat-Medium.woff') format("woff"), url('../fonts/Montserrat/Montserrat-Medium.woff2') format("woff2");
 }
 
@@ -23,7 +31,7 @@
     font-weight: 700;
     font-style: normal;
     font-family: 'Montserrat';
-    font-display: swap;
+    font-display: block;
     src: url('../fonts/Montserrat/Montserrat-Bold.woff') format("woff"), url('../fonts/Montserrat/Montserrat-Bold.woff2') format("woff2");
 }
 
@@ -31,7 +39,7 @@
     font-weight: 800;
     font-style: normal;
     font-family: 'Montserrat';
-    font-display: swap;
+    font-display: block;
     src: url('../fonts/Montserrat/Montserrat-ExtraBold.woff') format("woff"), url('../fonts/Montserrat/Montserrat-Extrabold.woff2') format("woff2");
 }
 
@@ -106,14 +114,28 @@ textarea {
     font-family: inherit;
 }
 
+.visually-hidden {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+
 .container {
     max-width: 1800px;
     margin: 0 auto;
 }
+
 .header-container {
-    margin: 0 15px;
     display: flex;
     align-items: center;
+    position: relative;
+    margin: 0 15px;
     background-color: var(--white);
 }
 
@@ -134,11 +156,66 @@ textarea {
     background-size: 100%;
 }
 
+.cross::before {
+    content: '';
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    width: 30px;
+    height: 1px;
+    background-color: var(--black);
+    transform-origin: center center;
+    transform: rotate(45deg);
+    transition: 0.3s background-color ease-in-out;
+}
+
+.cross:hover::before{
+    background-color: var(--cld);
+}
+
+.cross {
+    position: relative;
+    display: none;
+    padding: 0;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    background-color: var(--white);
+    border: 0 solid var(--white);
+    transition: 0.3s background-image ease-in-out;
+}
+
+.cross::after {
+    content: '';
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    width: 30px;
+    height: 1px;
+    background-color: var(--black);
+    transform-origin: center center;
+    transform: rotate(-45deg);
+    transition: 0.3s background-color ease-in-out;
+}
+.cross:hover::after{
+    background-color: var(--cld);
+}
+
+.header-menu.is-active {
+    display: flex;
+}
+
 .logo {
-    margin:14px auto 14px 0;
+    margin: 14px auto 14px 0;
     width: 224px;
     height: 72px;
-    transition: 0.5s transform ease-in-out;
+    transition-property: margin-left, transform;
+    transition: 0.5s margin-left ease-in-out;
+}
+
+.move-logo {
+    margin-left: 70%;
+    transition: 0s margin ease-in-out;
 }
 
 .logo:hover {
@@ -207,9 +284,6 @@ textarea {
     position: relative;
     margin: 0 15px;
     margin-bottom: 100px;
-    background-image: url('../img/main-back.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .first-container {
@@ -218,9 +292,57 @@ textarea {
     padding-left: 78px;
 }
 
+.swiper-container {
+    z-index: 0;
+    max-width: 100%;
+    height: 620px;
+}
+
+.s1 {
+    padding: 105px 0 50px 78px;
+    background-image: url('../img/main-back.jpg');
+    background-size: cover;
+}
+
+.s2 {
+    background-image: url('../img/brown-and-blue-glass-building-2093076\ 1.jpg');
+    background-size: cover;
+}
+
+.s3 {
+    background-image: url('../img/apartment-apartment-building-architecture-building-323705\ 1.jpg');
+    background-size: cover;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    color: var(--cld);
+}
+
+.swiper-button-disabled {
+    color: #666666;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 10px;
+}
+
+.swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.swiper-pagination-bullet:hover {
+    border: 4px solid var(--white);
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--white);
+}
+
 .first-title {
     width: 850px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     font-weight: 800;
     font-size: 70.3742px;
     line-height: 86px;
@@ -248,33 +370,6 @@ textarea {
 .first-btn:hover {
     opacity: 60%;
 }
-
-.first-switch {
-    display: none;
-    margin-top: 65px;
-    margin-left: 44.5%;
-    width: auto;
-
-}
-
-.first-switch-btn {
-    display: none;
-    margin-right: 20px;
-    width: 16px;
-    height: 16px;
-    border-radius: 8px;
-    border-color:rgba(255, 255, 255, 0.4);
-    background-color:rgba(255, 255, 255, 0.4);
-}
-
-.first-switch-btn:hover{
-    border:1.5px solid rgba(255, 255, 255, 1);
-}
-
-.first-switch-btn:focus{
-    background-color:rgba(255, 255, 255, 1);
-} 
-
 
 .about-us {
     margin: 0 15px 44px 15px;
@@ -304,6 +399,7 @@ textarea {
 .advantages {
     display: flex;
     justify-content: space-between;
+    position: relative;
     margin: 0 15px 100px 15px;
 }
 
@@ -449,23 +545,27 @@ textarea {
 }
 
 .advantage-right-description {
-    margin-left:34%;
-    margin-right:5px;
+    margin-left: 34%;
+    margin-right: 5px;
     width: 53%;
     margin-top: 4px;
     line-height: 33px;
 }
-.our-job-section{
+
+.our-job-section {
     margin: 0 15px 100px 15px;
 }
+
 .our-job {
     display: flex;
 }
+
 .our-job-left {
     position: relative;
     width: 100%;
 }
-.our-job-left::after{
+
+.our-job-left::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -517,7 +617,7 @@ textarea {
     margin-left: 3px;
     width: 43.5%;
     margin-bottom: 62px;
-    line-height: 33px;
+    line-height: 32px;
 }
 
 .more {
@@ -549,45 +649,34 @@ textarea {
     background-color: var(--brown);
 }
 
-
 .questions {
     margin: 0 15px 100px 15px;
 }
 
 .questions-title {
-    margin-bottom: 38px;
+    margin-bottom: 39px;
+}
+
+.questions-list #question-block-description {
+    height: auto;
 }
 
 .questions-item {
-    width: 100%;
-    border-bottom: 1px solid var(--grey);
-}
-
-.questions-item:first-child {
-    border-top: 1px solid var(--grey);
-}
-
-.questions-item:nth-child(4) .questions-text{
-    width: 90%;
-}
-
-.questions-btn {
     display: flex;
     align-items: center;
     position: relative;
-    text-align: left;
-    margin-left: 4px;
-    margin-top: 4px;
-    padding: 35px 0 42px 0;
     width: 100%;
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--brown);
-    border: 1px solid var(--white);
-    background-color: var(--white);
+    margin-left: 3px;
+    padding: 42px 0 42px 0;
+    border-top: 1px solid var(--grey);
+    cursor: pointer;
 }
 
-.questions-btn::after{
+.questions-item:last-of-type {
+    border-bottom: 1px solid var(--grey);
+}
+
+.questions-item::after {
     content: '';
     position: absolute;
     z-index: 1;
@@ -602,11 +691,11 @@ textarea {
     cursor: pointer;
 }
 
-.questions-btn:hover .questions-text {
+.questions-text:hover {
     color: var(--cld);
 }
 
-.questions-btn:hover::after{
+.questions-item:hover::after {
     background: url('../img/+х-hover.png') no-repeat;
     background-size: cover;
 }
@@ -614,7 +703,7 @@ textarea {
 .footer {
     display: flex;
     justify-content: space-between;
-    margin:0 15px;
+    margin: 0 15px;
     color: var(--white);
 }
 
@@ -807,71 +896,71 @@ textarea {
     line-height: 33px;
     color: var(--grey);
 }
-@media (max-width:1550px){
-    .footer-description{
+
+@media (max-width:1550px) {
+    .footer-description {
         padding-top: 70px;
-        padding-left:30%;
+        padding-left: 30%;
     }
 }
-@media (max-width:1400px){
-    .logo{
+
+@media (max-width:1400px) {
+    .logo {
         width: 150px;
         height: 50px;
     }
-    .advantage-right::before{
+    .advantage-right::before {
         width: 80px;
         height: 80px;
         border: 40px;
         top: 20px;
-        left:0px
+        left: 0px
     }
-    .advantage-right::after{
+    .advantage-right::after {
         width: 80px;
         height: 88px;
         background-size: cover;
         top: 0px;
-        left:30px
+        left: 30px
     }
-    .advantage-right2::before{
+    .advantage-right2::before {
         width: 80px;
         height: 80px;
         border: 40px;
         top: 20px;
-        left:0px
+        left: 0px
     }
-    .advantage-right2::after{
+    .advantage-right2::after {
         width: 80px;
         height: 80px;
         top: 0px;
-        left:30px
+        left: 30px
     }
-    .advantage-right-description{
+    .advantage-right-description {
         margin-left: 10px;
         margin-top: 100px;
         width: 100%;
     }
-    
     .our-job-list {
         width: 40%;
     }
-
     .footer-container:nth-child(1) {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
-    .btn-container{
+    .btn-container {
         justify-content: center;
         flex-wrap: wrap;
     }
-    .footer-form-btn{
+    .footer-form-btn {
         width: 100%;
         margin-bottom: 10px;
     }
 }
 
-@media (max-width:1030px){
-    .advantages-left-link{
+@media (max-width:1030px) {
+    .advantages-left-link {
         margin-right: 10px;
     }
 }
@@ -888,6 +977,10 @@ textarea {
         display: inline-block;
         cursor: pointer;
     }
+    .cross {
+        display: inline-block;
+        cursor: pointer;
+    }
     .logo {
         margin-right: 0;
         margin-bottom: 20px;
@@ -900,16 +993,48 @@ textarea {
     }
     .header-menu {
         display: none;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        width: 70%;
+        height: 100%;
+        background-color: var(--white);
+    }
+    .header-list{
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        width: 90%;
+        height: 100%;
+    }
+    .header-list-item{
+        margin: 0;
+    }
+    .header-list-item:last-child{
+        margin-right: 0;
     }
     .first-section {
         margin-bottom: 57px;
-        background-image: url('../img/main-back1024.jpg');
-        background-size: 100%;
-        background-position: 0 70%;
-        background-repeat: no-repeat;
     }
-    .first-container {
+    .swiper-container {
+        height: 670px;
+    }
+    .s1 {
         padding: 160px 42px 30px 47px;
+        background-image: url('../img/main-back1024.jpg');
+        background-position: 100% 70%;
+    }
+    .s2 {
+        background-position: 70%;
+    }
+    .s3 {
+        background-position: 25%;
+    }
+    .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+        bottom: 25px;
     }
     .first-title {
         margin-bottom: 7px;
@@ -931,10 +1056,9 @@ textarea {
         display: flex;
         margin-bottom: 3px;
     }
-    .first-switch-btn{
+    .first-switch-btn {
         display: inline-block;
     }
-
     .about-us {
         margin-bottom: 58px;
     }
@@ -945,7 +1069,7 @@ textarea {
         width: 100%;
         font-size: 16px;
     }
-    .i{
+    .i {
         margin-left: 0;
         margin-right: 5px;
     }
@@ -1019,7 +1143,7 @@ textarea {
         margin-top: 5px;
         margin-left: 350px;
     }
-    .our-job-section{
+    .our-job-section {
         margin-bottom: 57px;
     }
     .our-job {
@@ -1030,11 +1154,10 @@ textarea {
         margin-left: 0;
         margin-bottom: 46px;
     }
-    .our-job-left{
+    .our-job-left {
         margin-bottom: 0;
     }
-
-    .our-job-left::after{
+    .our-job-left::after {
         width: 47.8%;
         height: 89.5%;
         background-image: url('../img/wework1024.png');
@@ -1044,43 +1167,43 @@ textarea {
     .our-job-menu {
         margin-bottom: 47px;
     }
-    .our-job-list{
+    .our-job-list {
         width: 53%;
     }
     .our-job-item:last-child {
-        margin-right:0;
+        margin-right: 0;
     }
     .our-job-left-description {
         width: 47.3%;
         margin-bottom: 28px;
         line-height: 32px;
     }
-    .more{
+    .more {
         margin-bottom: 5px;
     }
     .questions {
-        margin-bottom: 60px;
+        margin-bottom: 55px;
     }
     .questions-title {
         margin-bottom: 36px;
     }
-    .questions-item:nth-child(2n+2) .questions-btn{
-        padding: 20px 0 21px;
-    }
-    .questions-item:nth-child(2n+3) .questions-btn{
-        padding: 36px 0 38px 0;
-    }
-    .questions-btn {
+    .questions-item {
         margin-left: 0;
-        padding: 41px 0 42px 0;
+        padding: 47px 0 42px 0;
         font-size: 20px;
         line-height: 33px;
     }
-    .questions-btn::after{
+    .questions-item::after {
         right: 0;
     }
-    .questions-text {
-        width: 80%;
+    .questions-item:nth-of-type(2n+2) {
+        padding: 22px 0 27px;
+    }
+    .questions-item:nth-of-type(2n+3) {
+        padding: 38px 0 42px 0;
+    }
+    .length {
+        width: 81%;
     }
     .footer-container:nth-child(1) {
         width: 40%;
@@ -1093,6 +1216,9 @@ textarea {
     .footer-container:nth-child(3) {
         display: none;
     }
+    .footer-list {
+        margin-bottom: 105px;
+    }
     .footer-title {
         margin-left: 20px;
     }
@@ -1101,6 +1227,7 @@ textarea {
         height: 415px;
     }
     .footer-form-btn {
+        margin-bottom: 5px;
         margin-left: 0;
         width: 45%;
     }
@@ -1112,9 +1239,16 @@ textarea {
         margin-right: 0;
     }
 }
-@media (max-width:933px){
-    .footer-form-btn{
+
+@media (max-width:933px) {
+    .footer-form-btn {
         width: 100%;
+    }
+}
+
+@media (max-width:893px) {
+    .s1 {
+        padding-top: 100px;
     }
 }
 
@@ -1126,6 +1260,9 @@ textarea {
         max-width: 700px;
         margin: 0 auto;
     }
+    .header-list {
+        margin-top: 10px;
+    }
     .header-container {
         margin: 0 15px;
         height: 85px;
@@ -1134,6 +1271,9 @@ textarea {
     .burger {
         margin-left: 0;
         display: inline-block;
+    }
+    .move-logo{
+        margin-left: 65%;
     }
     .logo {
         width: 150px;
@@ -1148,18 +1288,20 @@ textarea {
     .header-menu {
         display: none;
     }
+    .swiper-container {
+        height: 700px;
+    }
+    .s1 {
+        padding: 190px 0 30px 47px;
+        background-position: 100% 100%;
+    }
+    .swiper-button-prev, .swiper-button-next {
+        display: none;
+    }
     .first-section {
         margin: 0 0;
-        margin-bottom: 60px;
+        margin-bottom: 56px;
         padding-bottom: 0px;
-        background: url('../img/main-back1024.jpg') 100% 100% no-repeat;
-        background-size: cover;
-    }
-    .first-container {
-        padding-top: 192px;
-        padding-left: 45px;
-        padding-right: 0;
-        padding-bottom: 27px;
     }
     .first-title {
         margin-right: 0;
@@ -1212,7 +1354,7 @@ textarea {
         height: 170px;
     }
     .advantages-left-description {
-        margin-left:25px;
+        margin-left: 25px;
         line-height: 30px;
         width: 60%;
     }
@@ -1226,7 +1368,7 @@ textarea {
     }
     .advantage-right {
         margin-top: 0;
-        padding:38px 20px 35px 178px;
+        padding: 38px 20px 35px 178px;
         height: auto;
     }
     .advantage-right::before {
@@ -1243,7 +1385,7 @@ textarea {
         left: 72px;
     }
     .advantage-right2 {
-        padding:30px 20px 35px 176px;
+        padding: 30px 20px 35px 176px;
         margin-top: 40px;
         height: auto;
     }
@@ -1264,8 +1406,7 @@ textarea {
         margin-left: 0;
         width: 100%;
     }
-
-    .our-job-section{
+    .our-job-section {
         padding: 0 15px;
     }
     .our-job {
@@ -1277,7 +1418,7 @@ textarea {
         padding-right: 0;
         background: none;
     }
-    .our-job-left::after{
+    .our-job-left::after {
         display: none;
     }
     .our-job-title {
@@ -1321,32 +1462,29 @@ textarea {
     }
     .questions {
         padding: 0 15px;
-        margin-bottom: 56px;
+        margin-bottom: 63px;
     }
     .questions-title {
         margin-bottom: 36px;
         margin-left: 3px;
         font-size: 46px;
     }
-    .questions-btn {
+    .questions-text {
         font-size: 20px;
         line-height: 33px;
     }
-    .questions-item:first-child .questions-btn {
-        padding-top: 27px;
+    .questions-item:first-of-type {
+        padding-top: 32px;
+        padding-bottom: 26px;
+    }
+    .questions-item:not(:first-of-type) {
+        padding-top: 23px;
         padding-bottom: 23px;
     }
-    .questions-item:not(:first-child) .questions-btn {
-        padding-top: 19px;
-        padding-bottom: 23px;
-    }
-    .questions-text {
-        width: 80%;
-    }
-    .questions-item:nth-child(3) .questions-text {
+    .questions-item:nth-of-type(3) .length {
         width: 70%;
     }
-    .questions-item:nth-child(4) .questions-text {
+    .questions-item:nth-of-type(4) .length {
         width: 80%;
     }
     .footer {
@@ -1398,24 +1536,72 @@ textarea {
     }
 }
 
-@media (max-width:767px){
-    .first-container{
+@media (max-width:767px) {
+    .s1 {
+        padding-top: 100px;
         padding-left: 22px;
         padding-right: 22px;
     }
 }
 
-@media (max-width:691px){
-    .footer-container{
+@media (max-width:699px) {
+    .move-logo{
+        margin-left: 0;
+    }
+    .header-menu.is-active{
+        display: flex;
+    }
+    .header-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 30vw;
+        height: 100vh;
+        color: var(--white);
+        background-color: var(--brown);
+        opacity: .9;
+        transform: translateX(-9%);
+    }
+    .cross::before{
+        background-color: var(--white);
+        top: 4px;
+        transform: rotate(-45deg);
+    }  
+    .cross {
+        display: inline-block;
+        margin-top: 5px;
+        margin-left: 10%;
+        background-color: var(--brown);
+    }
+    .cross::after{
+        background-color: var(--white);
+        bottom: 4px;
+        transform: rotate(45deg);
+    }
+    .header-list {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5px;
+        width: auto;
+        height: 90%;
+        flex-direction: column;
+    }
+    .header-list-link{
+        color: var(--white);
+    }
+}
+
+@media (max-width:691px) {
+    .s1 {
         width: 50%;
     }
-    .footer-form-btn{
+    .footer-form-btn {
         width: 100%;
     }
 }
 
-@media (max-width:619px){
-    .about-us{
+@media (max-width:619px) {
+    .about-us {
         margin-bottom: 10px;
     }
     .about-us-description {
@@ -1437,78 +1623,99 @@ textarea {
     .advantages-left-section::after {
         display: none;
     }
-    .advantages-left-description{
+    .advantages-left-description {
         margin-left: 0;
         margin-bottom: 10px;
         width: 100%;
         font-weight: 400;
         color: var(--black);
     }
-    .advantages-left-link{
+    .advantages-left-link {
         color: var(--cld);
     }
-    .footer-container{
+    .footer-container {
         width: 100%;
     }
-    .footer-container:nth-child(1){
+    .footer-container:nth-child(1) {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         width: 100%;
         bottom: 10px;
     }
-    .footer-logo{
+    .footer-logo {
         margin: 0 auto;
         margin-bottom: 20px;
     }
-    .footer-social-container{
+    .footer-social-container {
         display: flex;
         justify-content: space-around;
         margin: 0 auto;
         width: 58%;
     }
-    .footer-container:nth-child(2){
+    .footer-container:nth-child(2) {
         margin-right: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .footer-title{
+    .footer-title {
         font-size: 35px;
     }
 }
 
-@media (max-width:513px){
-    h2{
-        font-size: 35px;
-        line-height:40px;
+@media (max-width:584px) {
+    .swiper-container {
+        height: 500px;
     }
-    .first-container{
-        padding: 50px 5px;
-    }
-    .first-title{
+    .first-title {
         text-align: center;
-        font-size: 33px;
+        font-size: 40px;
         line-height: 50px;
+        margin-bottom: 30px;
     }
-    .first-description{
-        margin-bottom: 20px;
+    .first-description {
+        margin-bottom: 70px;
         text-align: center;
-        font-size: 14px;
+        font-size: 20px;
         line-height: 20px;
     }
-    .first-btn{
-        margin-left: 25%;
+    .first-btn {
+        margin-left: 32%;
         padding: 20px 20px;
         font-size: 18px;
-        margin-bottom: 20px;
     }
-    .first-switch{
-        margin-left: 40%;
-    }
-    .questions-title{
+}
+
+@media (max-width:513px) {
+    h2 {
         font-size: 35px;
         line-height: 40px;
+    }
+    .s1 {
+        padding: 50px 5px;
+    }
+    .first-btn {
+        margin-left: 29%;
+    }
+    .questions-title {
+        font-size: 35px;
+        line-height: 40px;
+    }
+}
+
+@media (max-width:499px) {
+    .header-menu{
+        width: 50vw;
+    }
+}
+
+@media (max-width:464px) {
+    .first-description {
+        margin-bottom: 30px;
+    }
+    .first-btn {
+        margin-left: 28%;
     }
 }
 
@@ -1551,12 +1758,19 @@ textarea {
         background: url('../img-mobile/main-back-320.jpg') 100% 100% no-repeat;
         background-size: cover;
     }
-    .first-container {
+    .swiper-container {
+        height: 350px;
+    }
+    .s1 {
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 0;
         padding-top: 32px;
+    }
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
     }
     .first-title {
         margin: 0;
@@ -1572,9 +1786,9 @@ textarea {
         margin-bottom: 50px;
         width: 85%;
         text-align: center;
+        font-size: 16px;
         line-height: 22px;
         font-weight: 500;
-        font-size: 20px;
     }
     .first-btn {
         margin: 0;
@@ -1723,31 +1937,35 @@ textarea {
         font-size: 24px;
         line-height: 26px;
     }
-    .questions-item:first-child .questions-btn {
-        padding: 17px 0 23px 0;
+    .questions-list p {
+        font-size: 10px;
     }
-    .questions-item:nth-child(2n+2) .questions-btn {
+    .questions-item::after {
+        width: 30px;
+        height: 30px;
+    }
+    .questions-item:first-of-type {
+        padding: 20px 0 23px 0;
+    }
+    .questions-item:nth-of-type(2n+2) {
         margin-top: 2px;
     }
-    .questions-item:nth-child(2n+3) .questions-btn {
+    .questions-item:only-of-type(2n+3) {
         padding-bottom: 21px;
     }
-    .questions-item:nth-child(3) .questions-text {
-        width: 90%;
+    .questions .length {
+        width: 78%;
     }
-    .questions-item:nth-child(4) .questions-text {
+    .questions-item:nth-of-type(3) .length {
+        width: 80%;
+    }
+    .questions-item:nth-of-type(4) .length {
         width: 90%;
     }
     .questions-text {
-        width: 78%;
         font-size: 14px;
         line-height: 23px;
         font-weight: 500;
-    }
-    .questions-x {
-        margin-top: 2px;
-        width: 33px;
-        height: 33px;
     }
     .footer {
         height: 720px;
@@ -1801,7 +2019,7 @@ textarea {
         width: 131px;
         height: 42px;
     }
-    .footer-social-container{
+    .footer-social-container {
         width: auto;
     }
     .footer-social-facebook {
@@ -1841,6 +2059,15 @@ textarea {
         padding: 0 0;
         margin-bottom: 38px;
     }
+    .s1 {
+        background-image: url('../img-mobile/main-back-320.jpg')
+    }
+    .swiper-container {
+        height: 262px;
+    }
+    .swiper-pagination {
+        display: none;
+    }
     .first-title {
         line-height: 25px;
         font-size: 20px;
@@ -1855,7 +2082,6 @@ textarea {
         margin-bottom: 40px;
         padding: 20px 30px 20px 30px;
     }
-
     .about-us {
         margin-bottom: 10px;
         padding: 0 0;
@@ -1865,7 +2091,6 @@ textarea {
         padding-bottom: 210px;
         background: url('../img-mobile/advantage320.png') 0 100% no-repeat;
     }
-
     .advantages {
         padding: 0;
         margin-bottom: 40px;
@@ -1876,15 +2101,16 @@ textarea {
     }
     .advantages-left-description {
         width: 100%;
+        margin-bottom: 10px;
     }
     .advantages-left-link {
         padding: 10px 42px;
         border: 2px solid var(--cld);
     }
-    .advantage-right{
+    .advantage-right {
         padding: 0;
     }
-    .advantage-right2{
+    .advantage-right2 {
         padding: 0;
         padding-top: 5px;
         margin-top: 20px;
@@ -1896,8 +2122,7 @@ textarea {
     .advantage-right-description {
         padding: 0;
     }
-
-    .our-job-section{
+    .our-job-section {
         padding: 0;
     }
     .our-job {
@@ -1924,19 +2149,18 @@ textarea {
         margin-left: 0;
         margin-bottom: 16px;
     }
-    .questions-item:nth-child(3) .questions-text{
-        width: 80%;
+    .questions-item:nth-of-type(2) .length {
+        width: 70%;
     }
-    .questions-btn::after{
-        width: 30px;
-        height: 30px;
+    .questions-item:nth-of-type(3) .length {
+        width: 80%;
     }
     .footer {
         margin: 0;
         height: 678px;
     }
     .footer-container:nth-child(2) {
-        align-items:flex-start;
+        align-items: flex-start;
     }
     .footer-title {
         margin-top: 30px;
