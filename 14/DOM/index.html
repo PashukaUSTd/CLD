@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block {
+            display: none;
+            width: 300px;
+            height: 300px;
+            background-color: crimson;
+        }
+
+        .menu {
+            position: absolute;
+            z-index: 10;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 400px;
+            padding: 40px;
+            background-color: #f2f2f2;
+            transition: transform .3s ease-in-out;
+            transform: translateX(-101%);
+
+        }
+
+        .menu.is-active {
+            transform: none;
+        }
+
+        .burger {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: #f2f2f2;
+            border: 1px solid #333;
+            cursor: pointer;
+        }
+
+        .alert {
+            color: red;
+            outline: 3px solid rgba(255, 0, 0, .3);
+        }
+    </style>
+    <script> //один из видов подключения JS; этот тег может присутствовать как в теге <head> так и в <body>
+        console.log('Hello World!')
+    </script>
+    <script src="events.js"></script>
+    <!--Подключение самого файла JS (лучше пользоваться таким способом)-->
+
+</head>
+
+<body>
+    <div id="menu" class="menu is-active">
+        <ul>
+            <li>Menu 1</li>
+            <li>Menu 2</li>
+            <li>Menu 3</li>
+        </ul>
+    </div>
+    <div id="burger" class="burger">
+
+    </div>
+    <p class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ipsam quaerat necessitatibus numquam odit optio
+        reprehenderit ducimus fuga nobis? Doloribus nisi, ratione fuga quos quaerat facere temporibus? Dignissimos,
+        exercitationem quaerat?
+    </p>
+    <p id="text" class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ipsam quaerat necessitatibus numquam odit optio
+        reprehenderit ducimus fuga nobis? Doloribus nisi, ratione fuga quos quaerat facere temporibus? Dignissimos,
+        exercitationem quaerat?
+    </p>
+    <p class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ipsam quaerat necessitatibus numquam odit optio
+        reprehenderit ducimus fuga nobis? Doloribus nisi, ratione fuga quos quaerat facere temporibus? Dignissimos,
+        exercitationem quaerat?
+    </p>
+     <div class="block"></div>
+
+    <!-- <script src="index.js"></script> <!--Так как код выполняется последовательно (сверху вниз) подключение JS устанавливают в конце тега body
+    Потому что, если попробовать использовать JS для изменения элементов внутри body, то в данном случае код JS сработает раньше
+    чем сами элементы подгрузятся на страницу - т.е. другими словами не будет работать!-->
+</body>
+
+</html>

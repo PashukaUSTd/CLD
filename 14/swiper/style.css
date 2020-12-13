@@ -1,0 +1,13 @@
+img{
+    width: 1000px;
+    height: 700px;
+}
+.swiper-container {
+    width: 1000px;
+    height: 700px;
+}
+
+.swiper-slide{
+    background: url('../img/4R7CkuKBBb.png') no-repeat;
+    background-size: cover;
+}
