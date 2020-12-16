@@ -10,20 +10,24 @@
         то браузер начинает подгружать кастомный шрифт сразу же, как только начинает рендерить html. Работает по аналогии с 
         font-display: block; только работает быстрее, поскольку загрузка кастомного шрифта происходит сразу-->
     <title>Евклид</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="index.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <script defer src="js/swiper-bundle.min.js"></script> <!--атрибут defer запускает фоновую загрузку внешне подключенного скрипта,
+    не прерывая при этом загрузку DOM-дерева. Основное отличие от атрибута async это то, что defer сохраняет порядок запуска скрипта,
+если меньшего объема скрипт подключен снизу, а большего сверху, то нижний загрузиться первее, но запуститься согласно порядку. 
+async что первее загрузит, то подключит  -->
+    <script defer src="js/jquery.min.js"></script>
+    <script defer src="js/jquery-ui.js"></script>
+    <script defer src="js/index.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <header>
         <div class="container container768">
-            <div class="header-container ">
+            <div class="header-container">
                 <button type="button" id="burger" class="burger" aria-label="открыть меню"></button>
-                <img id="logo" class="logo" src="img/logo1.png" alt="Логотип" aria-label="Добро пожаловать на сайт Евклид">
+                <img id="logo" class="logo" src="img/logo1.png" alt="Логотип"
+                    aria-label="Добро пожаловать на сайт Евклид">
                 <nav id="menu" class="header-menu">
                     <button type="button" id="cross" class="cross" aria-label="закрыть меню"></button>
                     <ul class="header-list">
@@ -183,7 +187,7 @@
                     <h3 class="questions-text questions-item"><span class="length">Из чего формируется конечная
                             стоимость проекта?</span></h3>
                     <div>
-                        <p>
+                        <p class="questions-description">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, amet quisquam. In
                             cupiditate commodi inventore dolore unde hic ullam dolores laborum, consequuntur, iusto
                             excepturi ea beatae vitae ut ipsam dolorem.
@@ -205,7 +209,7 @@
                             мы его доработать /
                             реализовать?</span></h3>
                     <div>
-                        <p>
+                        <p class="questions-description">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, amet quisquam. In
                             cupiditate commodi inventore dolore unde hic ullam dolores laborum, consequuntur, iusto
                             excepturi ea beatae vitae ut ipsam dolorem.
@@ -215,7 +219,7 @@
                             чём ваше отличие?</span>
                     </h3>
                     <div>
-                        <p>
+                        <p class="questions-description">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, amet quisquam. In
                             cupiditate commodi inventore dolore unde hic ullam dolores laborum, consequuntur, iusto
                             excepturi ea beatae vitae ut ipsam dolorem.
@@ -225,7 +229,7 @@
                             согласование с
                             подрядчиком / организацией?</span></h3>
                     <div>
-                        <p>
+                        <p class="questions-description">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, amet quisquam. In
                             cupiditate commodi inventore dolore unde hic ullam dolores laborum, consequuntur, iusto
                             excepturi ea beatae vitae ut ipsam dolorem.
@@ -234,7 +238,7 @@
                     <h3 class="questions-text questions-item"><span class="length">Могу ли я вернуть деньги на
                             каком-либо из этапов работ?</span></h3>
                     <div>
-                        <p>
+                        <p class="questions-description">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, amet quisquam. In
                             cupiditate commodi inventore dolore unde hic ullam dolores laborum, consequuntur, iusto
                             excepturi ea beatae vitae ut ipsam dolorem.

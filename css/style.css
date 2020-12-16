@@ -11,7 +11,7 @@
     разница между italic и oblique в том, что первое начертание это имитация рукописного шрифта, а второе наклон символов вправо*/
     font-family: 'Montserrat';
     /*Название шрифта*/
-    font-display: block;
+    font-display: swap;
     /*Значение block дает понять браузеру, что нужно сперва подгрузить кастомный шрифт а после 
     отобразить его - такое явление называется FOIT, значение swap говорит браузеру заменить кастомный на резервный шрифт,
     пока тот подгружается - это явление называется FOUT*/
@@ -23,7 +23,7 @@
     font-weight: 500;
     font-style: normal;
     font-family: 'Montserrat';
-    font-display: block;
+    font-display: swap;
     src: url('../fonts/Montserrat/Montserrat-Medium.woff') format("woff"), url('../fonts/Montserrat/Montserrat-Medium.woff2') format("woff2");
 }
 
@@ -31,7 +31,7 @@
     font-weight: 700;
     font-style: normal;
     font-family: 'Montserrat';
-    font-display: block;
+    font-display: swap;
     src: url('../fonts/Montserrat/Montserrat-Bold.woff') format("woff"), url('../fonts/Montserrat/Montserrat-Bold.woff2') format("woff2");
 }
 
@@ -39,7 +39,7 @@
     font-weight: 800;
     font-style: normal;
     font-family: 'Montserrat';
-    font-display: block;
+    font-display: swap;
     src: url('../fonts/Montserrat/Montserrat-ExtraBold.woff') format("woff"), url('../fonts/Montserrat/Montserrat-Extrabold.woff2') format("woff2");
 }
 
@@ -135,7 +135,7 @@ textarea {
     display: flex;
     align-items: center;
     position: relative;
-    margin: 0 15px;
+    padding: 0 15px;
     background-color: var(--white);
 }
 
@@ -202,7 +202,8 @@ textarea {
 }
 
 .header-menu.is-active {
-    display: flex;
+    /* display: flex; */
+    transform: none;
 }
 
 .logo {
@@ -211,11 +212,6 @@ textarea {
     height: 72px;
     transition-property: margin-left, transform;
     transition: 0.5s margin-left ease-in-out;
-}
-
-.move-logo {
-    margin-left: 70%;
-    transition: 0s margin ease-in-out;
 }
 
 .logo:hover {
@@ -657,7 +653,7 @@ textarea {
     margin-bottom: 39px;
 }
 
-.questions-list #question-block-description {
+.questions-list {
     height: auto;
 }
 
@@ -698,6 +694,9 @@ textarea {
 .questions-item:hover::after {
     background: url('../img/+х-hover.png') no-repeat;
     background-size: cover;
+}
+.questions-description{
+    padding: 0 5px;
 }
 
 .footer {
@@ -987,20 +986,26 @@ textarea {
         width: 150px;
         height: 45px;
     }
+    .move-logo {
+        margin-left: 70%;
+        transition: 1s margin ease-in-out;
+    }
     .header-search {
         margin-right: 0;
         cursor: pointer;
     }
     .header-menu {
-        display: none;
+        /* display: none; */
+        display: flex;
         align-items: center;
         justify-content: space-between;
         position: absolute;
         z-index: 10;
         top: 0;
-        left: 0;
+        left: 10px;
         width: 70%;
         height: 100%;
+        transform: translateX(-110%);
         background-color: var(--white);
     }
     .header-list{
@@ -1257,16 +1262,18 @@ textarea {
         max-width: 768px;
     }
     .container768 {
-        max-width: 700px;
+        max-width: 730px;
         margin: 0 auto;
+    }
+    .header-menu {
+        width: 65%;
     }
     .header-list {
         margin-top: 10px;
     }
     .header-container {
-        margin: 0 15px;
         height: 85px;
-        padding-top: 15px;
+        padding: 12px 15px 0 15px;
     }
     .burger {
         margin-left: 0;
@@ -1285,9 +1292,6 @@ textarea {
         margin-bottom: 3px;
         margin-right: 0;
     }
-    .header-menu {
-        display: none;
-    }
     .swiper-container {
         height: 700px;
     }
@@ -1301,7 +1305,7 @@ textarea {
     .first-section {
         margin: 0 0;
         margin-bottom: 56px;
-        padding-bottom: 0px;
+        padding-bottom: 0;
     }
     .first-title {
         margin-right: 0;
@@ -1544,12 +1548,12 @@ textarea {
     }
 }
 
-@media (max-width:699px) {
+@media (max-width:710px) {
     .move-logo{
         margin-left: 0;
     }
     .header-menu.is-active{
-        display: flex;
+        transform: none;
     }
     .header-menu {
         position: fixed;
@@ -1560,7 +1564,7 @@ textarea {
         color: var(--white);
         background-color: var(--brown);
         opacity: .9;
-        transform: translateX(-9%);
+        transform: translateX(-109%);
     }
     .cross::before{
         background-color: var(--white);
@@ -1721,7 +1725,7 @@ textarea {
 
 @media (max-width:414px) {
     .container {
-        max-width: 382px;
+        max-width: 414px;
     }
     h2 {
         font-size: 24px;
@@ -1730,7 +1734,7 @@ textarea {
         font-size: 14px;
     }
     .header-container {
-        position: relative;
+        margin: 0 15px;
         height: 60px;
     }
     .header-search {
@@ -1755,6 +1759,7 @@ textarea {
         background-size: 30px 24px;
     }
     .first-section {
+        margin: 0 15px 20px;
         background: url('../img-mobile/main-back-320.jpg') 100% 100% no-repeat;
         background-size: cover;
     }
@@ -1802,7 +1807,7 @@ textarea {
         display: none;
     }
     .about-us {
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
     .about-us-title {
         margin-bottom: 0;
@@ -1817,10 +1822,12 @@ textarea {
         margin-left: 0;
     }
     .advantages {
-        margin-bottom: 38px;
+        margin-bottom: 20px;
     }
     .advantages-left-section {
         padding-top: 0;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
     }
     .advantages-left-description {
         margin-left: 0;
@@ -1839,8 +1846,7 @@ textarea {
     .advantage-right {
         margin-top: 0;
         margin-bottom: 0;
-        padding-left: 0;
-        padding-right: 0;
+        padding: 50px 0 20px;
         align-items: flex-start;
         border: none;
     }
@@ -1858,10 +1864,9 @@ textarea {
         left: 21px;
     }
     .advantage-right2 {
-        margin-top: 20px;
+        margin-top: 0;
         margin-bottom: 0;
-        padding-left: 0;
-        padding-right: 0;
+        padding: 50px 0 20px;
         align-items: flex-start;
         border: none;
     }
@@ -1886,14 +1891,14 @@ textarea {
         line-height: 20px;
     }
     .advantage-right-description {
-        margin-top: 50px;
+        margin-top: 0;
         margin-bottom: 0;
         margin-right: 0;
         width: 100%;
         line-height: 28px;
     }
     .our-job {
-        margin-bottom: 43px;
+        margin-bottom: 20px;
     }
     .our-job-menu {
         margin-bottom: 10px;
@@ -1930,7 +1935,7 @@ textarea {
         font-size: 12px;
     }
     .questions {
-        margin-bottom: 38px;
+        margin-bottom: 40px;
     }
     .questions-title {
         margin-bottom: 16px;
@@ -2056,6 +2061,7 @@ textarea {
         background-size: 25px 19px;
     }
     .first-section {
+        margin: 0;
         padding: 0 0;
         margin-bottom: 38px;
     }
@@ -2097,7 +2103,7 @@ textarea {
     }
     .advantages-left-section {
         margin-left: 0;
-        margin-bottom: 20px;
+        margin-bottom: 35px;
     }
     .advantages-left-description {
         width: 100%;
@@ -2120,6 +2126,7 @@ textarea {
         line-height: 24px;
     }
     .advantage-right-description {
+        margin-top: 50px;
         padding: 0;
     }
     .our-job-section {
