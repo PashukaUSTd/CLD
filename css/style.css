@@ -339,6 +339,12 @@ button:focus {
     color: var(--cld);
 }
 
+.swiper-button-prev:focus, .swiper-button-next:focus {
+    outline-style: solid;
+    outline-color: var(--cld);
+    outline-width: medium;
+}
+
 .swiper-button-disabled {
     color: #666666;
 }
@@ -697,6 +703,12 @@ button:focus {
     padding: 42px 0 42px 0;
     border-top: 1px solid var(--grey);
     cursor: pointer;
+}
+
+.questions-item:focus {
+    outline-style: solid;
+    outline-color: var(--cld);
+    outline-width: medium;
 }
 
 .questions-item:last-of-type {
