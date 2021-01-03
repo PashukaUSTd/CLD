@@ -4,24 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="preload" href="fonts/Montserrat/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="fonts/Montserrat/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <title>Евклид</title>
+    <link rel="preload" href="fonts/Montserrat/Montserrat-Regular.woff2" as="font" type="font/woff2"
+        crossorigin="anonymous">
+    <link rel="preload" href="fonts/Montserrat/Montserrat-Bold.woff2" as="font" type="font/woff2"
+        crossorigin="anonymous">
     <!--Если в атрибуте rel стоит значение "preload"
         то браузер начинает подгружать кастомный шрифт сразу же, как только начинает рендерить html. Работает по аналогии с 
         font-display: block; только работает быстрее, поскольку загрузка кастомного шрифта происходит сразу-->
-    <title>Евклид</title>
-    <link rel="stylesheet" href="css/swiper-bundle.min.css">
-    <script defer src="js/swiper-bundle.min.js"></script> <!--атрибут defer запускает фоновую загрузку внешне подключенного скрипта,
+    <link rel="stylesheet" href="css/swiper-bundle.min.css"> 
+    <link rel="stylesheet" href="css/simplebar.min.css">
+    <script defer src="js/swiper-bundle.min.js"></script>
+    <!--атрибут defer запускает фоновую загрузку внешне подключенного скрипта,
     не прерывая при этом загрузку DOM-дерева. Основное отличие от атрибута async это то, что defer сохраняет порядок запуска скрипта,
 если меньшего объема скрипт подключен снизу, а большего сверху, то нижний загрузиться первее, но запуститься согласно порядку. 
 async что первее загрузит, то подключит  -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
     <script defer src="js/jquery.min.js"></script>
     <script defer src="js/jquery-ui.js"></script>
     <script defer src="js/index.js"></script>
+    <script defer src="js/simplebar.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body data-simplebar>
     <header>
         <div class="container container768">
             <div class="header-container">
@@ -41,7 +47,7 @@ async что первее загрузит, то подключит  -->
                             <a href="#steps" class="header-list-link">Этапы</a>
                         </li>
                         <li class="header-list-item">
-                            <a href="#reviews" class="header-list-link">Отзывы</a>
+                            <a href="#reviews" class="header-list-link">FAQ</a>
                         </li>
                         <li class="header-list-item">
                             <a href="#contacts" class="header-list-link">Контакты</a>
@@ -58,24 +64,22 @@ async что первее загрузит, то подключит  -->
             <section class="first-section">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide s1">
-                            <h1 class="first-title">Проектные решения любой сложности</h1>
-                            <p class="first-description">Есть над чем задуматься: базовые сценарии поведения
-                                пользователей и
-                                по сей день
-                                остаются уделом проектантов
-                            </p>
-                            <button type="button" class="first-btn">
-                                Заказать расчёт
-                            </button>
-                        </div>
+                        <div class="swiper-slide s1"></div>
                         <div class="swiper-slide s2"></div>
                         <div class="swiper-slide s3"></div>
                     </div>
-
                     <div class="swiper-pagination"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                </div>
+                <div class="first-container">
+                    <h1 class="first-title">Проектные решения любой сложности</h1>
+                    <p class="first-description">Есть над чем задуматься: базовые сценарии поведения
+                        пользователей и
+                        по сей день
+                        остаются уделом проектантов
+                    </p>
+                    <button type="button" class="first-btn">
+                        Заказать расчёт
+                    </button>
                 </div>
             </section>
             <section class="about-us container768" id="aboutus">
@@ -133,22 +137,22 @@ async что первее загрузит, то подключит  -->
                         <div class="our-job-menu">
                             <ul class="our-job-list">
                                 <li class="our-job-item">
-                                    <button type="button" class="our-job-btn">
+                                    <button type="button" class="our-job-btn" data-path="one">
                                         1 шаг
                                     </button>
                                 </li>
                                 <li class="our-job-item">
-                                    <button type="button" class="our-job-btn">
+                                    <button type="button" class="our-job-btn" data-path="two">
                                         2 шаг
                                     </button>
                                 </li>
                                 <li class="our-job-item">
-                                    <button type="button" class="our-job-btn">
+                                    <button type="button" class="our-job-btn" data-path="three">
                                         3 шаг
                                     </button>
                                 </li>
                                 <li class="our-job-item">
-                                    <button type="button" class="our-job-btn">
+                                    <button type="button" class="our-job-btn" data-path="four">
                                         4 шаг
                                     </button>
                                 </li>
@@ -157,7 +161,7 @@ async что первее загрузит, то подключит  -->
                         <h3 class="our-job-left-title">
                             Проводим консультацию
                         </h3>
-                        <p class="our-job-left-description">
+                        <p class="our-job-left-description our-job-left-description--active" data-target="one">
                             Влечет за собой процесс внедрения и модернизации приоритизации разума над эмоциями. В рамках
                             спецификации современных стандартов, некоторые особенности внутренней политики будут
                             объективно
@@ -170,6 +174,29 @@ async что первее загрузит, то подключит  -->
                             традиционное производство, нанотехнологии освещают чрезвычайно интересные особенности
                             картины в
                             целом, однако конкретные выводы, разумеется, призваны к ответу.
+                        </p>
+                        <p class="our-job-left-description" data-target="two">
+                            всего лишь частью общей картины, реплицированные с зарубежных источников, современные
+                            исследования подвергнуты целой серии независимых исследований. Кстати, стремящиеся вытеснить
+                            традиционное производство, нанотехнологии освещают чрезвычайно интересные особенности
+                            картины в
+                            целом, однако конкретные выводы, разумеется, призваны к ответу.
+                        </p>
+                        <p class="our-job-left-description" data-target="three">
+                            Влечет за собой процесс внедрения и модернизации приоритизации разума над эмоциями. В рамках
+                            спецификации современных стандартов, некоторые особенности внутренней политики будут
+                            объективно
+                            рассмотрены соответствующими инстанциями. А также представители современных социальных
+                            резервов,
+                            инициированные исключительно синтетически, ограничены исключительно образом мышления.
+                            Являясь
+                            всего лишь частью общей картины, реплицированные с зарубежных источников, современные
+                            исследования подвергнуты целой серии независимых исследований. Кстати, стремящиеся вытеснить
+                            традиционное производство, нанотехнологии освещают чрезвычайно интересные особенности
+                        </p>
+                        <p class="our-job-left-description" data-target="four">
+                            Влечет за собой процесс внедрения и модернизации приоритизации разума над эмоциями. В рамках
+                            спецификации современных стандартов, некоторые особенности внутренней политики будут
                         </p>
                         <a href="#" class="more" aria-label="Подробнее о наших услугах">
                             Подробнее
@@ -247,6 +274,9 @@ async что первее загрузит, то подключит  -->
                     </div>
                 </div>
             </section>
+            <section class="map-section">
+                <div id="map" class="map"></div>
+            </section>
         </div>
     </main>
     <footer>
@@ -292,9 +322,9 @@ async что первее загрузит, то подключит  -->
                         </li>
                     </ul>
                     <div class="footer-social-container">
-                        <a href="#" class="footer-social-facebook" aria-label="мы в facebook"></a>
-                        <a href="#" class="footer-social-vk" aria-label="мы в контакте"></a>
-                        <a href="#" class="footer-social-inst" aria-label="мы в инстаграм"></a>
+                        <a href="https://ru-ru.facebook.com/" target="_blank" class="footer-social-facebook" aria-label="мы в facebook"></a>
+                        <a href="https://vk.com/" target="_blank" class="footer-social-vk"  aria-label="мы в контакте"></a>
+                        <a href="https://www.instagram.com/" target="_blank" class="footer-social-inst"  aria-label="мы в инстаграм"></a>
                     </div>
                 </div>
                 <div class="footer-container correct">
