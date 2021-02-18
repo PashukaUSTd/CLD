@@ -4,21 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Евклид</title>
+    <title>Евклид строим, покоряем</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_package_v0.16/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_package_v0.16/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_package_v0.16/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <link rel="preload" href="fonts/Montserrat/Montserrat-Regular.woff2" as="font" type="font/woff2"
         crossorigin="anonymous">
     <link rel="preload" href="fonts/Montserrat/Montserrat-Bold.woff2" as="font" type="font/woff2"
         crossorigin="anonymous">
-    <!--Если в атрибуте rel стоит значение "preload"
-        то браузер начинает подгружать кастомный шрифт сразу же, как только начинает рендерить html. Работает по аналогии с 
-        font-display: block; только работает быстрее, поскольку загрузка кастомного шрифта происходит сразу-->
-    <link rel="stylesheet" href="css/swiper-bundle.min.css"> 
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/simplebar.min.css">
     <script defer src="js/swiper-bundle.min.js"></script>
-    <!--атрибут defer запускает фоновую загрузку внешне подключенного скрипта,
-    не прерывая при этом загрузку DOM-дерева. Основное отличие от атрибута async это то, что defer сохраняет порядок запуска скрипта,
-если меньшего объема скрипт подключен снизу, а большего сверху, то нижний загрузиться первее, но запуститься согласно порядку. 
-async что первее загрузит, то подключит  -->
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
     <script defer src="js/jquery.min.js"></script>
     <script defer src="js/jquery-ui.js"></script>
@@ -322,9 +322,12 @@ async что первее загрузит, то подключит  -->
                         </li>
                     </ul>
                     <div class="footer-social-container">
-                        <a href="https://ru-ru.facebook.com/" target="_blank" class="footer-social-facebook" aria-label="мы в facebook"></a>
-                        <a href="https://vk.com/" target="_blank" class="footer-social-vk"  aria-label="мы в контакте"></a>
-                        <a href="https://www.instagram.com/" target="_blank" class="footer-social-inst"  aria-label="мы в инстаграм"></a>
+                        <a href="https://ru-ru.facebook.com/" target="_blank" class="footer-social-facebook"
+                            aria-label="мы в facebook"></a>
+                        <a href="https://vk.com/" target="_blank" class="footer-social-vk"
+                            aria-label="мы в контакте"></a>
+                        <a href="https://www.instagram.com/" target="_blank" class="footer-social-inst"
+                            aria-label="мы в инстаграм"></a>
                     </div>
                 </div>
                 <div class="footer-container correct">
